@@ -1,0 +1,21 @@
+<div class="video-area">
+    <div class="container">
+        <div class="video-box">
+            <img src="assets/images/video-img.jpg" alt="video-image">
+            <button type="button" (click)="openPopup()" class="video-btn">
+                <i class="ri-play-circle-line"></i>
+            </button>
+            <img src="assets/images/video-shape.png" alt="shape" class="video-shape"> 
+        </div>
+    </div>
+</div>
+
+<!-- Video Popup -->
+<div class="video-popup" *ngIf="isOpen">
+    <div class="popup-inner">
+        <iframe src="https://www.youtube.com/embed/XNQk1qt__Vw" title="Setup and Local Installation - React Nextjs Online Yoga Coaching &amp; Training Courses System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <button (click)="closePopup()" type="button" class="close-btn">
+            <i class="ri-close-fill"></i>
+        </button>
+    </div>
+</div>

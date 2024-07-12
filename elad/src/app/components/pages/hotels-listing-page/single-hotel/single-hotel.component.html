@@ -1,0 +1,98 @@
+
+    <li class="single-hotel-box mb-5">
+        
+    <div class="row align-items-center justify-content-center">
+        <div class="col-xl-5 col-lg-12 col-sm-12">
+            <a  class="d-block">
+                <img src="{{ r.category.image  }}" alt="listing-image">
+            </a>
+        </div>
+        <div class="col-xl-4 col-lg-6 col-sm-7">
+            <div class="content">
+                <h3>
+                    {{ r.category.libCateg }}
+                </h3>
+                <!--<p>1346 Carpenter Road North Royalton, OD 66551</p>
+                <div class="rating">
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-fill"></i>
+                    <i class="ri-star-half-fill"></i>
+                </div>
+                <p>4.8/5 Wonderful (543 reviews)</p>-->
+                <div class="price">{{ r.tarif | currency }} <span>(Per night)</span></div>
+                <p>
+                    {{ r.disponible }} available room(s)
+                </p>
+
+
+                <!-- plus minus input -->
+                 <div class="input-group mb-3" *ngIf="cart.checkIFRoomAdded(r) == false">
+                    <div class="input-group">
+                        <button class="btn btn-primary" type="button" id="button-addon1"
+                        (click)="decrementValue()">
+                        <i class="ri-subtract-line"></i>
+                        </button>
+                        
+                        <input type="text" class="form-control bg-white" [(ngModel)]="requestedNumber">
+                       
+                        <button class="btn btn-primary" type="button" id="button-addon2"  
+                            (click)="incrementValue()">
+                            <i class="ri-add-large-line"></i>
+                        </button>
+ 
+                    </div>
+                 </div>
+
+
+                <button *ngIf="cart.checkIFRoomAdded(r) == false" (click)="bookRoom(r)" class="default-btn">Book now</button>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-sm-5">
+            <ul class="info">
+                
+                <li *ngIf="r.category.climat == 'O' ">
+                    <i class="ri-safe-line"></i>
+                    Safe
+                </li>
+                <li *ngIf="r.category.climat == 'O' ">
+                    <i class="ri-windy-line"></i>
+                    Air conditioning
+                </li>
+                <li *ngIf="r.category.television == 'O' ">
+                    <i class="ri-tv-line"></i>
+                    TV
+                </li>
+                <li *ngIf="r.category.miniBar == 'O' ">
+                    <i class="ri-goblet-line"></i>
+                    Mini bar
+                </li>
+                
+                <li>
+                    <i class="ri-hotel-bed-line"></i>
+                    {{ r.category.nbLits }} bed(s)
+                </li>
+                <li *ngIf=" r.category.doucheBain == 'D'  ">
+                    <i class="ri-drop-line"></i>
+                    Shower
+                </li>
+                <li *ngIf=" r.category.doucheBain == 'B'  ">
+                    <i class="ri-drop-line"></i>
+                    Bath
+                </li>
+                
+                <li >
+                    <i class="ri-user-line"></i>
+                    {{ r.category.maxadult }} adult(s)
+                </li>
+                <li >
+                    <i class="ri-user-add-line"></i>
+                    {{ r.category.maxchild }} child(s)
+                </li> 
+
+                 
+            </ul>
+        </div>
+    </div>
+</li>

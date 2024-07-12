@@ -1,0 +1,48 @@
+<div class="banner-area bg-faf1ed">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-12">
+                <div class="banner-content">
+                    <span class="top-title">Welcome to Elad</span>
+                    <h1>Book your needs in an easy way</h1>
+                    <p>If you take any of our booking services here, you get all kinds of benefits from us.</p>
+                    <a routerLink="/faq" class="default-btn">Need help</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="banner-image">
+                    <img src="assets/images/banner/banner-img-2.png" alt="banner-image">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="banner-form">
+                    <h3>Book cheap flights tickets</h3>
+                    <form class="book-form" [formGroup]="form" (ngSubmit)="submit()">
+                        <div class="row"> 
+                            <div class="col-lg-12 col-md-6">
+                                <div class="form-group">
+                                    <dp-date-picker theme="dp-material" placeholder="Check-in date" [config]="datePickerConfig" required="true" formControlName="startDate"></dp-date-picker>
+                                    <img src="assets/images/icon/calendar.svg" alt="calendar">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-6">
+                                <div class="form-group">
+                                    <dp-date-picker theme="dp-material" placeholder="Check-out date" [config]="datePickerConfig" required="true" formControlName="endDate"></dp-date-picker>
+                                    <img src="assets/images/icon/calendar.svg" alt="calendar">
+                                </div> 
+                            </div> 
+                            <div class="col-lg-12 col-md-6">
+                                <div class="form-group mb-0">
+                                    <button type="submit" class="default-btn" [disabled]=" !form.valid">
+                                        <i class="ri-search-line"></i>
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
